@@ -1,0 +1,1533 @@
+{
+  "generated_at": "2026-06-14T12:03:38.162878",
+  "user_explanations": [
+    {
+      "user_id": "USR00012",
+      "username": "vikram.white",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account has been inactive for 25 days and is orphaned",
+          "severity": "HIGH",
+          "recommendation": "Remove access to SIEM and Azure_AD systems immediately"
+        },
+        {
+          "finding": "INACTIVE_SERVICE_ACCOUNT",
+          "details": "Service account has been inactive for 25 days",
+          "severity": "MEDIUM",
+          "recommendation": "Review and update service account access and permissions"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "SIEM",
+          "Azure_AD"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Remove access to sensitive systems",
+        "Conduct a thorough review of user permissions"
+      ],
+      "next_escalation": "Escalate to CISO for further review and action"
+    },
+    {
+      "user_id": "USR00015",
+      "username": "sophia.white",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "The admin account has been inactive for 163 days",
+          "severity": "HIGH",
+          "recommendation": "Immediately review and validate the account's continued need for admin access"
+        },
+        {
+          "finding": "MULTIPLE_SYSTEM_ACCESS",
+          "details": "The user has access to 7 systems, including Okta, SIEM, Azure_AD, ServiceNow, AWS_IAM, VPN, and ADMIN_SYS",
+          "severity": "MEDIUM",
+          "recommendation": "Review and validate the user's need for access to each system"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "Okta",
+          "SIEM",
+          "Azure_AD",
+          "ServiceNow",
+          "AWS_IAM",
+          "VPN",
+          "ADMIN_SYS"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential unauthorized access to sensitive data and systems, resulting in significant financial and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review and validate the user's account and access",
+        "Remove unnecessary admin privileges",
+        "Monitor the account for suspicious activity"
+      ],
+      "next_escalation": "Escalate to the CISO and Security team for further review and action"
+    },
+    {
+      "user_id": "USR00058",
+      "username": "anthony.taylor",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 51 days",
+          "severity": "HIGH",
+          "recommendation": "Immediately terminate or re-enable the account to prevent potential unauthorized access"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned, indicating a potential lack of ownership or oversight",
+          "severity": "MEDIUM",
+          "recommendation": "Assign a new owner or manager to the account to ensure proper oversight and control"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "AD"
+        ],
+        "estimated_records_exposed": 1000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Terminate the account",
+        "Conduct a thorough investigation",
+        "Review and update access controls"
+      ],
+      "next_escalation": "Escalate to the CISO and IT management for further review and action"
+    },
+    {
+      "user_id": "USR00027",
+      "username": "pooja.sullivan",
+      "risk_score": 120.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Admin account inactive for 112 days",
+          "severity": "HIGH",
+          "recommendation": "Immediately review and verify the account status and remove admin privileges if no longer required"
+        },
+        {
+          "finding": "EXCESSIVE_SYSTEM_ACCESS",
+          "details": "Access to 7 systems including sensitive areas like ADMIN_SYS and SIEM",
+          "severity": "MEDIUM",
+          "recommendation": "Review and limit access to only necessary systems based on job requirements"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "Salesforce",
+          "AWS_IAM",
+          "ADMIN_SYS",
+          "SIEM",
+          "Azure_AD",
+          "ServiceNow"
+        ],
+        "estimated_records_exposed": 50000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Conduct a thorough account review",
+        "Limit access to sensitive systems",
+        "Monitor account activity"
+      ],
+      "next_escalation": "Escalate to CISO for further review and action within the next 24 hours"
+    },
+    {
+      "user_id": "USR00155",
+      "username": "varun.colombo",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 35 days",
+          "severity": "MEDIUM",
+          "recommendation": "Review and remove or re-enable the account"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned, indicating a potential lack of ownership or oversight",
+          "severity": "HIGH",
+          "recommendation": "Assign ownership or remove the account"
+        },
+        {
+          "finding": "MULTIPLE_SYSTEMS_ACCESS",
+          "details": "Account has access to 6 systems, including Azure_AD, AWS_IAM, ServiceNow, Okta, VPN, and EMAIL",
+          "severity": "LOW",
+          "recommendation": "Review access and remove any unnecessary privileges"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "Azure_AD",
+          "AWS_IAM",
+          "ServiceNow",
+          "Okta",
+          "VPN",
+          "EMAIL"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac10 million or 2% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review and remove or re-enable the account",
+        "Assign ownership or remove the account",
+        "Review access and remove any unnecessary privileges"
+      ],
+      "next_escalation": "Escalate to IT management for further review and action"
+    },
+    {
+      "user_id": "USR00294",
+      "username": "kenneth.colombo",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 11 days",
+          "severity": "MEDIUM",
+          "recommendation": "Review and remove or re-enable the account to prevent potential unauthorized access"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned, indicating a potential lack of ownership or oversight",
+          "severity": "HIGH",
+          "recommendation": "Assign ownership or remove the account to prevent potential security risks"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "AD"
+        ],
+        "estimated_records_exposed": 1000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential disruption to business operations and damage to reputation"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Remove or re-enable the account",
+        "Assign ownership or review access controls"
+      ],
+      "next_escalation": "Escalate to IT management for review and action within 3 business days"
+    },
+    {
+      "user_id": "USR00057",
+      "username": "zainab.jo",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Admin account has been inactive for 132 days",
+          "severity": "HIGH",
+          "recommendation": "Review and verify the account's continued need for admin access"
+        },
+        {
+          "finding": "EXCESSIVE_PRIVILEGES",
+          "details": "Account has access to 4 systems, including GCP, ADMIN_SYS, AD, and SIEM",
+          "severity": "MEDIUM",
+          "recommendation": "Review and limit access to only necessary systems"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "GCP",
+          "ADMIN_SYS",
+          "AD",
+          "SIEM"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential disruption to sales operations and customer data"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Verify account activity and access",
+        "Limit access to necessary systems",
+        "Review and update account permissions"
+      ],
+      "next_escalation": "Escalate to IT management for review and action within 7 days"
+    },
+    {
+      "user_id": "USR00044",
+      "username": "pooja.mishra",
+      "risk_score": 150.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN_ACCOUNT",
+          "details": "The admin account has been inactive for 167 days, which is a significant security risk",
+          "severity": "HIGH",
+          "recommendation": "Immediately revoke admin privileges and conduct a thorough investigation"
+        },
+        {
+          "finding": "EXCESSIVE_SYSTEM_ACCESS",
+          "details": "The user has access to 5 systems, including sensitive systems like Salesforce and Azure_AD",
+          "severity": "MEDIUM",
+          "recommendation": "Review and limit system access to only necessary systems"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "EMAIL",
+          "SIEM",
+          "ADMIN_SYS",
+          "Salesforce",
+          "Azure_AD"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Revoke admin privileges",
+        "Conduct a thorough investigation",
+        "Limit system access"
+      ],
+      "next_escalation": "Escalate to CISO and IT management for further review and action"
+    },
+    {
+      "user_id": "USR00074",
+      "username": "mark.he",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "OVERPRIVILEGED_ACCESS",
+          "details": "User has access to 2 systems (SIEM and AWS_IAM) with a privilege level of 'user', which may be excessive for their role as a Security Officer",
+          "severity": "MEDIUM",
+          "recommendation": "Review and adjust user privileges to align with their job responsibilities and follow the principle of least privilege as outlined in NIST AC-2"
+        },
+        {
+          "finding": "HIGH_RISK_SCORE",
+          "details": "User has a risk score of 100.0, indicating a high level of risk, but this is likely due to their role in the Security department",
+          "severity": "INFO",
+          "recommendation": "Monitor user activity and adjust risk score as necessary"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "SIEM",
+          "AWS_IAM"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Conduct a thorough review of user privileges",
+        "Implement additional monitoring and logging for high-risk users"
+      ],
+      "next_escalation": "Escalate to CISO for review and approval of suggested actions"
+    },
+    {
+      "user_id": "USR00068",
+      "username": "robert.patel",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Account has been inactive for 121 days despite being an admin account",
+          "severity": "HIGH",
+          "recommendation": "Review account activity and consider revoking admin privileges if not necessary"
+        },
+        {
+          "finding": "EXCESSIVE_ACCESS",
+          "details": "User has access to 5 systems, including ADMIN_SYS, PROD_DB, AWS_IAM, Salesforce, and EMAIL",
+          "severity": "MEDIUM",
+          "recommendation": "Review user's job requirements and revoke access to systems not necessary for their role"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "ADMIN_SYS",
+          "PROD_DB",
+          "AWS_IAM",
+          "Salesforce",
+          "EMAIL"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review account activity and access",
+        "Consider revoking admin privileges",
+        "Conduct a thorough risk assessment"
+      ],
+      "next_escalation": "Escalate to CISO for further review and action"
+    },
+    {
+      "user_id": "USR00067",
+      "username": "donald.wang",
+      "risk_score": 120.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 54 days",
+          "severity": "MEDIUM",
+          "recommendation": "Review account activity and consider disabling or removing access"
+        },
+        {
+          "finding": "OVERPRIVILEGED_ACCESS",
+          "details": "User has access to 2 systems (PROD_DB and ADMIN_SYS) with a privilege level of user",
+          "severity": "HIGH",
+          "recommendation": "Review user's job requirements and adjust access privileges accordingly"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "PROD_DB",
+          "ADMIN_SYS"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Conduct a thorough review of user access and privileges",
+        "Implement additional monitoring and logging for high-risk systems"
+      ],
+      "next_escalation": "Escalate to CISO for further review and action"
+    },
+    {
+      "user_id": "USR00063",
+      "username": "daniel.colombo",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 52 days",
+          "severity": "MEDIUM",
+          "recommendation": "Remove access to GCP and VPN systems"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned with no clear ownership or departmental affiliation",
+          "severity": "HIGH",
+          "recommendation": "Assign ownership to a departmental manager or supervisor"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "GCP",
+          "VPN"
+        ],
+        "estimated_records_exposed": 1000,
+        "gdpr_fine_exposure": "\u20ac500,000 or 2% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Remove access to sensitive systems",
+        "Assign ownership to a departmental manager"
+      ],
+      "next_escalation": "Escalate to IT management for further review and action"
+    },
+    {
+      "user_id": "USR00078",
+      "username": "christopher.menon",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 22 days",
+          "severity": "MEDIUM",
+          "recommendation": "Remove or re-enable the account to prevent potential unauthorized access"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned with no clear ownership or management",
+          "severity": "HIGH",
+          "recommendation": "Assign a new owner or manager to the account to ensure proper oversight"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "Azure_AD"
+        ],
+        "estimated_records_exposed": 1000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Remove or re-enable the account",
+        "Assign a new owner or manager to the account"
+      ],
+      "next_escalation": "Escalate to IT management for further review and action within 3 business days"
+    },
+    {
+      "user_id": "USR00082",
+      "username": "arjun.hwang",
+      "risk_score": 120.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Admin account inactive for 81 days",
+          "severity": "HIGH",
+          "recommendation": "Review and validate admin account activity"
+        },
+        {
+          "finding": "EXCESSIVE_PRIVILEGES",
+          "details": "Access to 5 systems, including PROD_DB and GCP",
+          "severity": "MEDIUM",
+          "recommendation": "Review and limit access to necessary systems"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "PROD_DB",
+          "Okta",
+          "VPN",
+          "AD",
+          "GCP"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review admin account activity",
+        "Limit access to necessary systems",
+        "Conduct a thorough risk assessment"
+      ],
+      "next_escalation": "Escalate to CISO for further review and action"
+    },
+    {
+      "user_id": "USR00088",
+      "username": "william.jang",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Admin account inactive for 143 days",
+          "severity": "HIGH",
+          "recommendation": "Revalidate admin access and update account status"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "ServiceNow",
+          "VPN",
+          "EMAIL",
+          "AD",
+          "AWS_IAM"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential disruption to Engineering department operations and data breaches"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Revalidate admin access",
+        "Update account status",
+        "Conduct access review"
+      ],
+      "next_escalation": "Escalate to CISO for review and approval of access revalidation"
+    },
+    {
+      "user_id": "USR00236",
+      "username": "harsh.connor",
+      "risk_score": 120.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "OVERPRIVILEGED_ACCESS",
+          "details": "User has access to 2 systems (PROD_DB and ADMIN_SYS) with a service-account privilege level, despite being inactive for 40 days",
+          "severity": "HIGH",
+          "recommendation": "Review and adjust user privileges to align with job requirements and current activity level"
+        },
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 40 days, which may indicate a potential security risk",
+          "severity": "MEDIUM",
+          "recommendation": "Verify user's employment status and consider disabling or deleting the account if no longer needed"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "PROD_DB",
+          "ADMIN_SYS"
+        ],
+        "estimated_records_exposed": 100000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Conduct a thorough review of user privileges",
+        "Verify user's employment status and adjust account status accordingly"
+      ],
+      "next_escalation": "Escalate to CISO for further review and approval of suggested actions"
+    },
+    {
+      "user_id": "USR00125",
+      "username": "kenneth.verma",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "The admin account has been inactive for 177 days",
+          "severity": "HIGH",
+          "recommendation": "Immediately review and verify the account status, and consider revoking admin privileges if the account is no longer in use"
+        },
+        {
+          "finding": "EXCESSIVE_PRIVILEGES",
+          "details": "The account has access to 6 systems, including SIEM, AWS_IAM, Azure_AD, EMAIL, Okta, and GCP",
+          "severity": "MEDIUM",
+          "recommendation": "Review the account's access and privileges to ensure they align with the user's job title and responsibilities"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "SIEM",
+          "AWS_IAM",
+          "Azure_AD",
+          "EMAIL",
+          "Okta",
+          "GCP"
+        ],
+        "estimated_records_exposed": 100000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Revoke admin privileges",
+        "Conduct a thorough review of account access and privileges"
+      ],
+      "next_escalation": "Escalate to CISO and IT management for further review and action"
+    },
+    {
+      "user_id": "USR00129",
+      "username": "sanjana.burke",
+      "risk_score": 80.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "The account has been inactive for 17 days",
+          "severity": "MEDIUM",
+          "recommendation": "Review and remove access if no longer needed"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "The account is orphaned, indicating a potential lack of ownership or oversight",
+          "severity": "HIGH",
+          "recommendation": "Assign ownership and review access privileges"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "PROD_DB"
+        ],
+        "estimated_records_exposed": 10000,
+        "gdpr_fine_exposure": "\u20ac10 million or 2% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review and update account status",
+        "Assign ownership and review access privileges"
+      ],
+      "next_escalation": "Escalate to IT management for further review and action"
+    },
+    {
+      "user_id": "USR00140",
+      "username": "riya.lim",
+      "risk_score": 85.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "INACTIVE_ACCOUNT",
+          "details": "Account has been inactive for 35 days",
+          "severity": "MEDIUM",
+          "recommendation": "Remove or archive the account to prevent potential unauthorized access"
+        },
+        {
+          "finding": "ORPHANED_ACCOUNT",
+          "details": "Account is orphaned, indicating a lack of ownership or oversight",
+          "severity": "HIGH",
+          "recommendation": "Assign ownership or reassign the account to an active user"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "EMAIL",
+          "Azure_AD"
+        ],
+        "estimated_records_exposed": 500,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Remove or archive the account",
+        "Assign ownership or reassign the account"
+      ],
+      "next_escalation": "Escalate to IT management for review and approval"
+    },
+    {
+      "user_id": "USR00090",
+      "username": "neha.o'brien",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "INACTIVE_ADMIN",
+          "details": "Admin account has been inactive for 147 days",
+          "severity": "HIGH",
+          "recommendation": "Immediately review and verify the account status, and consider revoking admin privileges if not necessary"
+        },
+        {
+          "finding": "EXCESSIVE_PRIVILEGES",
+          "details": "User has access to 4 systems, including PROD_DB, with admin privileges",
+          "severity": "MEDIUM",
+          "recommendation": "Review and limit access to sensitive systems, following the principle of least privilege"
+        }
+      ],
+      "blast_radius": {
+        "systems_at_risk": [
+          "Azure_AD",
+          "VPN",
+          "AD",
+          "PROD_DB"
+        ],
+        "estimated_records_exposed": 100000,
+        "gdpr_fine_exposure": "\u20ac20 million or 4% revenue",
+        "business_impact": "Potential data breach and reputational damage"
+      },
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Conduct a thorough investigation of the account activity",
+        "Review and update access controls and privileges"
+      ],
+      "next_escalation": "Escalate to CISO and IT management for further review and action"
+    }
+  ],
+  "event_explanations": [
+    {
+      "event_index": 0,
+      "user_id": "USR00150",
+      "username": "daniel.wagner",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User logged in to HRIS system at 00:48 on a weekend, which is outside of normal business hours.",
+          "severity": "HIGH",
+          "recommendation": "Review and adjust access controls for HRIS system to restrict access during off-hours."
+        },
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User accessed HRIS system from local workstation, which may not have the necessary security controls in place.",
+          "severity": "MEDIUM",
+          "recommendation": "Verify that local workstations have up-to-date security patches and antivirus software installed."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review access controls for HRIS system",
+        "Verify security of local workstations"
+      ],
+      "next_escalation": "Review and adjust access controls for HRIS system to restrict access during off-hours and verify security of local workstations."
+    },
+    {
+      "event_index": 1,
+      "user_id": "USR00252",
+      "username": "nadia.singh",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User nadia.singh executed a high-sensitivity SQL query on GL_System at 14:25:00 on a weekday, which failed.",
+          "severity": "HIGH",
+          "recommendation": "Review user access permissions for nadia.singh to ensure they align with their job responsibilities and re-evaluate the sensitivity level of the GL_System resource."
+        },
+        {
+          "finding": "EXCESSIVE_DATA_ACCESS",
+          "details": "User nadia.singh accessed 11,000 rows from GL_System, which may indicate excessive data access.",
+          "severity": "MEDIUM",
+          "recommendation": "Implement data access controls to limit the number of rows nadia.singh can access from GL_System to a reasonable threshold (e.g., 1,000 rows)."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review user access permissions for nadia.singh",
+        "Implement data access controls for GL_System"
+      ],
+      "next_escalation": "The security team should review this incident within the next 24 hours and take necessary actions to prevent similar incidents in the future."
+    },
+    {
+      "event_index": 2,
+      "user_id": "USR00082",
+      "username": "arjun.hwang",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "NIST AC-2",
+          "details": "Unauthorized export of 15,000 high-sensitivity records to a USB drive during off-hours (00:48, October 19, 2025).",
+          "severity": "HIGH",
+          "recommendation": "Review and restrict access to the Customer_Vault resource to only necessary personnel, and implement additional authentication and authorization controls to prevent off-hours data exports."
+        },
+        {
+          "finding": "GDPR Article 32",
+          "details": "High-sensitivity data (15,000 records) was exported to a non-encrypted USB drive during off-hours, potentially violating GDPR Article 32 requirements for data protection.",
+          "severity": "MEDIUM",
+          "recommendation": "Implement encryption for all data exports, and ensure that all USB drives used for data transfer are encrypted and properly secured."
+        },
+        {
+          "finding": "SOX 302",
+          "details": "Unauthorized export of high-sensitivity data to a USB drive may be considered a material weakness under SOX 302, requiring additional audit and controls.",
+          "severity": "MEDIUM",
+          "recommendation": "Conduct a thorough audit of all data export processes to identify and address any material weaknesses, and implement additional controls to prevent unauthorized data exports."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review and restrict access to the Customer_Vault resource",
+        "Implement additional authentication and authorization controls",
+        "Implement encryption for all data exports"
+      ],
+      "next_escalation": "Notify the Security Operations Center (SOC) and escalate to the CISO for further investigation and action."
+    },
+    {
+      "event_index": 3,
+      "user_id": "USR00036",
+      "username": "nicholas.harris",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "NIST AC-2: Unauthorized access to sensitive data",
+          "details": "User performed a high-sensitivity SQL query on the PROD_DB at 00:15 on a weekend, which is outside of regular business hours.",
+          "severity": "HIGH",
+          "recommendation": "Review user access levels and ensure that all users have their access rights reviewed and updated regularly."
+        },
+        {
+          "finding": "GDPR Article 32: Insufficient logging and monitoring",
+          "details": "The SQL query was executed at 00:15, which is outside of the typical business hours, and the rowcount was 5000, indicating a potentially large data transfer.",
+          "severity": "MEDIUM",
+          "recommendation": "Implement additional logging and monitoring to detect and prevent unauthorized access to sensitive data outside of regular business hours."
+        },
+        {
+          "finding": "SOX 302: Inadequate access controls",
+          "details": "The user performed a high-sensitivity SQL query on the PROD_DB, which indicates a potential security risk.",
+          "severity": "LOW",
+          "recommendation": "Review and update access controls to ensure that users only have access to the resources they need to perform their job functions."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review user access levels",
+        "Implement additional logging and monitoring",
+        "Update access controls"
+      ],
+      "next_escalation": "Please review and address these findings within the next 48 hours."
+    },
+    {
+      "event_index": 4,
+      "user_id": "USR00214",
+      "username": "ryan.sanchez",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_EXPORT",
+          "details": "User ryan.sanchez exported 100,000 rows of high sensitivity data to an external email at 21:50 on a weekday.",
+          "severity": "HIGH",
+          "recommendation": "Review and restrict access to HRIS data for user USR00214 to prevent unauthorized exports."
+        },
+        {
+          "finding": "AFTER_HOURS_ACCESS",
+          "details": "User ryan.sanchez accessed HRIS during off-hours (21:50) on a weekday.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and adjust user access schedules to prevent after-hours access to HRIS."
+        },
+        {
+          "finding": "CROSS_DEPARTMENT_DATA_ACCESS",
+          "details": "User ryan.sanchez accessed HRIS data from a different department.",
+          "severity": "LOW",
+          "recommendation": "Review and enforce data access policies to ensure users only access data from their own department."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review user access schedules",
+        "Enforce data access policies"
+      ],
+      "next_escalation": "Review and restrict access to HRIS data for user USR00214 within the next 24 hours."
+    },
+    {
+      "event_index": 5,
+      "user_id": "USR00176",
+      "username": "nisha.sharma",
+      "risk_score": 100.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User accessed Customer_Vault at 06:06 on August 23, 2025, which is during off-hours (hour_of_day: 6, is_after_hours: true)",
+          "severity": "HIGH",
+          "recommendation": "Review user access logs for all off-hours access and ensure that access is justified and approved by management"
+        },
+        {
+          "finding": "DATA_EXPORT",
+          "details": "User exported 15,000 rows of high-sensitivity data to cloud storage at 06:06 on August 23, 2025",
+          "severity": "HIGH",
+          "recommendation": "Implement data loss prevention (DLP) policies to restrict data exports to cloud storage and ensure that data is encrypted in transit"
+        },
+        {
+          "finding": "DATA_ACCESS_ACROSS_DEPARTMENTS",
+          "details": "User accessed Customer_Vault, which is a resource owned by another department, at 06:06 on August 23, 2025",
+          "severity": "MEDIUM",
+          "recommendation": "Implement role-based access control (RBAC) to restrict access to department-owned resources and ensure that users have the necessary permissions"
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review user access logs",
+        "Implement DLP policies"
+      ],
+      "next_escalation": "Please review the findings and take necessary actions to mitigate the risks identified. If you need further assistance, please escalate to the security team."
+    },
+    {
+      "event_index": 6,
+      "user_id": "USR00011",
+      "username": "maria.o'brien",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "After-hours access",
+          "details": "User accessed HRIS at 00:55 on a weekday, 47 minutes after midnight, which is considered after hours.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and adjust access controls to restrict after-hours access to HRIS for all users."
+        },
+        {
+          "finding": "Cross-departmental access",
+          "details": "User accessed HRIS from a local workstation, which is not their primary department's workstation.",
+          "severity": "HIGH",
+          "recommendation": "Review and adjust access controls to restrict cross-departmental access to HRIS for all users."
+        },
+        {
+          "finding": "High row count",
+          "details": "User executed a SQL query that returned 11,000 rows, which may indicate a data exposure risk.",
+          "severity": "HIGH",
+          "recommendation": "Review and adjust SQL query logging to detect and prevent high row count queries."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access controls",
+        "Adjust SQL query logging"
+      ],
+      "next_escalation": "Please review and address these findings within the next 72 hours."
+    },
+    {
+      "event_index": 7,
+      "user_id": "USR00057",
+      "username": "zainab.jo",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User zainab.jo accessed HRIS at 00:51 on 2025-08-03, which is after hours (hour_of_day = 0)",
+          "severity": "HIGH",
+          "recommendation": "Review and restrict access to HRIS for users outside of regular working hours"
+        },
+        {
+          "finding": "UNAUTHORIZED_DEPARTMENT_ACCESS",
+          "details": "User zainab.jo accessed HRIS from a department other than their own (is_cross_dept = true)",
+          "severity": "MEDIUM",
+          "recommendation": "Review and restrict access to HRIS for users accessing other departments' resources"
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access logs for all users accessing HRIS after hours and from other departments"
+      ],
+      "next_escalation": "Review and implement additional access controls to prevent unauthorized access"
+    },
+    {
+      "event_index": 8,
+      "user_id": "USR00158",
+      "username": "arjun.sanchez",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "Access to Customer_Vault at 20:59 on a weekday, which is within regular working hours, but the user has accessed this resource 47 times in the last 30 days.",
+          "severity": "HIGH",
+          "recommendation": "Review user access permissions and consider implementing a more granular access control policy to limit access to sensitive resources."
+        },
+        {
+          "finding": "HIGH_SENSITIVITY_DATA_ACCESS",
+          "details": "High sensitivity data (Customer_Vault) accessed with a rowcount of 11000.",
+          "severity": "HIGH",
+          "recommendation": "Implement data masking or encryption for high sensitivity data to prevent unauthorized access."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review user access permissions",
+        "Implement data masking or encryption"
+      ],
+      "next_escalation": "The security team should review the findings and implement corrective actions within the next 72 hours."
+    },
+    {
+      "event_index": 9,
+      "user_id": "USR00294",
+      "username": "kenneth.colombo",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User kenneth.colombo accessed Customer_Vault at 01:08:00 on 2025-07-18, which is after hours (hour_of_day: 1)",
+          "severity": "HIGH",
+          "recommendation": "Review user access patterns and adjust permissions to prevent after-hours access"
+        },
+        {
+          "finding": "DATA_ACCESS",
+          "details": "User kenneth.colombo accessed 11,000 rows from Customer_Vault at 01:08:00 on 2025-07-18",
+          "severity": "MEDIUM",
+          "recommendation": "Implement data access controls to limit the number of rows accessed"
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review user access patterns and adjust permissions",
+        "Implement data access controls"
+      ],
+      "next_escalation": "Security Team: Investigate and address unauthorized access to Customer_Vault"
+    },
+    {
+      "event_index": 10,
+      "user_id": "USR00181",
+      "username": "george.smith",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_ACCESS",
+          "details": "User accessed HRIS at 02:18 on 2025-07-13, which is during off-hours (hour_of_day: 2, is_after_hours: true)",
+          "severity": "HIGH",
+          "recommendation": "Review access logs to ensure only authorized personnel have access to HRIS during off-hours"
+        },
+        {
+          "finding": "CROSS_DEPARTMENT_ACCESS",
+          "details": "User accessed HRIS from a local workstation, which is a cross-departmental access (is_cross_dept: true)",
+          "severity": "MEDIUM",
+          "recommendation": "Verify that the user's role requires cross-departmental access to HRIS"
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access logs",
+        "Verify user role"
+      ],
+      "next_escalation": "Review findings with the security team within the next 24 hours"
+    },
+    {
+      "event_index": 11,
+      "user_id": "USR00266",
+      "username": "robert.thomas",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "After-hours access",
+          "details": "User accessed HRIS at 22:39 on July 12, 2025, which is outside of regular business hours.",
+          "severity": "HIGH",
+          "recommendation": "Review and adjust user access permissions to restrict after-hours access."
+        },
+        {
+          "finding": "Cross-departmental access",
+          "details": "User accessed HRIS from a local workstation, which is not their primary department.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and adjust user access permissions to restrict cross-departmental access."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review user access permissions and adjust as necessary"
+      ],
+      "next_escalation": "Review and adjust user access permissions within the next 72 hours to prevent potential security risks."
+    },
+    {
+      "event_index": 12,
+      "user_id": "USR00083",
+      "username": "ryan.thomas",
+      "risk_score": 100.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "NIST AC-2",
+          "details": "User accessed PROD_DB at 22:35 on a weekday, which is considered after hours (22:00-06:00).",
+          "severity": "MEDIUM",
+          "recommendation": "Review access logs to identify users with frequent after-hours access and adjust their access permissions accordingly."
+        },
+        {
+          "finding": "GDPR Article 32",
+          "details": "High-sensitivity data (25000 rows) was exported to cloud storage without encryption.",
+          "severity": "HIGH",
+          "recommendation": "Implement encryption for sensitive data exports to cloud storage."
+        },
+        {
+          "finding": "SOX 302",
+          "details": "User ryan.thomas performed a high-risk action (export_data) on PROD_DB, which may be considered material to the company.",
+          "severity": "MEDIUM",
+          "recommendation": "Review user access logs to ensure that all users with material access are properly authorized and monitored."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access logs to identify users with frequent after-hours access",
+        "Implement encryption for sensitive data exports to cloud storage"
+      ],
+      "next_escalation": "Review and address these findings within the next 72 hours."
+    },
+    {
+      "event_index": 13,
+      "user_id": "USR00087",
+      "username": "aditya.taylor",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "NIST AC-2",
+          "details": "User logged in to high-sensitivity resource (Customer_Vault) at 22:02 on a weekend (2025-07-06) after regular business hours.",
+          "severity": "HIGH",
+          "recommendation": "Implement additional authentication factors for weekend and after-hours access to high-sensitivity resources."
+        },
+        {
+          "finding": "GDPR Article 32",
+          "details": "User accessed 360 rows from Customer_Vault, which may contain sensitive customer data.",
+          "severity": "MEDIUM",
+          "recommendation": "Monitor and limit access to sensitive customer data to only necessary personnel."
+        },
+        {
+          "finding": "SOX 302",
+          "details": "User accessed Customer_Vault, which may contain financial data, at 22:02 on a weekend (2025-07-06) after regular business hours.",
+          "severity": "MEDIUM",
+          "recommendation": "Implement additional controls to ensure financial data access is properly authorized and audited."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access logs for aditya.taylor and implement additional controls for weekend and after-hours access to high-sensitivity resources."
+      ],
+      "next_escalation": "Review and implement additional controls within the next 24 hours to address compliance violations."
+    },
+    {
+      "event_index": 14,
+      "user_id": "USR00261",
+      "username": "nikhil.thomas",
+      "risk_score": 100.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "Unauthorized access after hours",
+          "details": "User accessed PROD_DB at 01:23:00 on a weekday, which is considered after hours.",
+          "severity": "HIGH",
+          "recommendation": "Review user access permissions and adjust after-hours access policies to restrict access during non-business hours."
+        },
+        {
+          "finding": "Export of high sensitivity data",
+          "details": "User exported 25,000 rows of high sensitivity data to an external email.",
+          "severity": "HIGH",
+          "recommendation": "Implement data loss prevention (DLP) policies to restrict the export of high sensitivity data to external recipients."
+        },
+        {
+          "finding": "Data export to external recipient",
+          "details": "User exported data to an external email, which may pose a risk of data leakage.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and update data export policies to ensure that sensitive data is not exported to external recipients without proper authorization."
+        },
+        {
+          "finding": "Cross-departmental access",
+          "details": "User accessed PROD_DB, which is a resource shared across departments.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and update access control policies to ensure that users only access resources that are necessary for their job functions."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review user access permissions",
+        "Implement DLP policies",
+        "Update data export policies"
+      ],
+      "next_escalation": "Please review the findings and take necessary actions to mitigate the risks identified in this security event."
+    },
+    {
+      "event_index": 15,
+      "user_id": "USR00209",
+      "username": "nikhil.martinez",
+      "risk_score": 100.0,
+      "severity": "HIGH",
+      "findings": [
+        {
+          "finding": "Unauthorized access to sensitive data",
+          "details": "User accessed PROD_DB at 05:14 on a weekday, which is after hours (hour_of_day = 5).",
+          "severity": "HIGH",
+          "recommendation": "Review access logs for users accessing PROD_DB during off-hours and adjust access permissions accordingly."
+        },
+        {
+          "finding": "Data export to cloud storage without proper authorization",
+          "details": "User exported 12,000 rows of high-sensitivity data to cloud storage without proper authorization (is_cross_dept = true).",
+          "severity": "HIGH",
+          "recommendation": "Implement proper authorization and access controls for cross-departmental data exports."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review access logs",
+        "Implement proper authorization"
+      ],
+      "next_escalation": "Review and adjust access permissions for users accessing PROD_DB during off-hours within the next 24 hours."
+    },
+    {
+      "event_index": 16,
+      "user_id": "USR00091",
+      "username": "steven.thompson",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "AC-2.1",
+          "details": "User performed high-sensitivity export of 25,000 rows from Customer_Vault at 22:07 on August 31, 2025, during off-hours.",
+          "severity": "HIGH",
+          "recommendation": "Review and restrict access to Customer_Vault for Steven Thompson to only on-hours and during workdays."
+        },
+        {
+          "finding": "AC-2.2",
+          "details": "User exported data to cloud_storage, which may not meet data residency requirements.",
+          "severity": "MEDIUM",
+          "recommendation": "Verify that cloud_storage meets data residency requirements and consider using on-premises storage for high-sensitivity data."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2"
+      ],
+      "confidence": 0.8,
+      "suggested_actions": [
+        "Review access controls for Steven Thompson and verify data residency requirements for cloud_storage"
+      ],
+      "next_escalation": "Security Operations Center (SOC) for further investigation and remediation."
+    },
+    {
+      "event_index": 17,
+      "user_id": "USR00101",
+      "username": "paul.hoffmann",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "NIST AC-2",
+          "details": "Admin operation performed on PROD_DB at 22:12 on a weekday, outside of regular working hours (22:00-18:00).",
+          "severity": "HIGH",
+          "recommendation": "Restrict admin operations on PROD_DB to regular working hours (18:00-22:00) and ensure proper logging and monitoring."
+        },
+        {
+          "finding": "GDPR Article 32",
+          "details": "High-risk admin operation (admin_operation) performed on PROD_DB, which contains high-sensitivity data (high sensitivity).",
+          "severity": "HIGH",
+          "recommendation": "Implement additional security controls and access restrictions for high-sensitivity data and ensure proper data encryption and backup procedures."
+        },
+        {
+          "finding": "SOX 302",
+          "details": "Admin operation performed by a user from a different department (cross-departmental access), which may indicate a lack of segregation of duties.",
+          "severity": "MEDIUM",
+          "recommendation": "Review and adjust access controls to ensure proper segregation of duties and minimize cross-departmental access."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review access controls and adjust as necessary",
+        "Implement additional security controls for high-sensitivity data"
+      ],
+      "next_escalation": "Review and address findings within the next 3 business days."
+    },
+    {
+      "event_index": 18,
+      "user_id": "USR00207",
+      "username": "joseph.young",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "NIST AC-2",
+          "details": "Access to Customer_Vault at 22:44 on 2025-09-08 was made outside of regular working hours (hour_of_day = 22, is_after_hours = true)",
+          "severity": "HIGH",
+          "recommendation": "Review access permissions for User USR00207 and ensure that they only have access during regular working hours"
+        },
+        {
+          "finding": "GDPR Article 32",
+          "details": "High-risk admin_operation on Customer_Vault with 135 rows affected (rowcount = 135) was successful (status = success)",
+          "severity": "MEDIUM",
+          "recommendation": "Implement additional logging and monitoring to detect and prevent high-risk operations on sensitive resources"
+        },
+        {
+          "finding": "SOX 302",
+          "details": "Cross-departmental access to Customer_Vault by User USR00207 (is_cross_dept = true) was made without proper authorization",
+          "severity": "HIGH",
+          "recommendation": "Verify that User USR00207 has the necessary authorization to access Customer_Vault across departments"
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review access permissions for User USR00207",
+        "Implement additional logging and monitoring"
+      ],
+      "next_escalation": "Please review and address the findings within the next 24 hours"
+    },
+    {
+      "event_index": 19,
+      "user_id": "USR00213",
+      "username": "riya.colombo",
+      "risk_score": 100.0,
+      "severity": "CRITICAL",
+      "findings": [
+        {
+          "finding": "UNAUTHORIZED_EXPORT",
+          "details": "User riya.colombo exported 100,000 rows of high sensitivity data from PROD_DB at 10:54:05 on 2026-04-18, which is during regular business hours.",
+          "severity": "HIGH",
+          "recommendation": "Review and restrict user riya.colombo's access to PROD_DB and ensure that data exports are only performed during off-hours or with explicit approval."
+        },
+        {
+          "finding": "DATA_EXPORT_TO_LOCAL_WORKSTATION",
+          "details": "User riya.colombo exported data to their local workstation, which may pose a data leakage risk.",
+          "severity": "MEDIUM",
+          "recommendation": "Ensure that data exports to local workstations are encrypted and access is restricted to authorized personnel."
+        }
+      ],
+      "compliance_violations": [
+        "NIST AC-2",
+        "GDPR Article 32",
+        "SOX 302"
+      ],
+      "confidence": 0.9,
+      "suggested_actions": [
+        "Review user access and permissions",
+        "Implement data encryption for local workstations"
+      ],
+      "next_escalation": "Review with Security Team within 24 hours to determine if further action is required."
+    }
+  ]
+}
