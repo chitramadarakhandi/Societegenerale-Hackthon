@@ -1,98 +1,175 @@
-Problem 01: Identity Sprawl & Access Detection - Sample Datasets
-Overview
-This folder contains sample/mock data for Problem Statement 01. All data is fabricated and represents a sample for development/testing purposes.
+# Identity Sprawl & Privilege Abuse Detection
 
-Files Included
-1. identity_users.csv (100 user records)
-Comprehensive mock user account database with realistic attributes across multiple departments.
+```
+██╗██████╗ ███████╗███╗   ██╗████████╗██╗████████╗██╗   ██╗
+██║██╔══██╗██╔════╝████╗  ██║╚══██╔══╝██║╚══██╔══╝╚██╗ ██╔╝
+██║██║  ██║█████╗  ██╔██╗ ██║   ██║   ██║   ██║    ╚████╔╝
+██║██║  ██║██╔══╝  ██║╚██╗██║   ██║   ██║   ██║     ╚██╔╝
+██║██████╔╝███████╗██║ ╚████║   ██║   ██║   ██║      ██║
+╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝   ╚═╝      ╚═╝
+THREAT INTELLIGENCE PLATFORM
+```
 
-Columns:
+## Architecture
 
-user_id - Unique identifier
-username - Login name
-email - Email address
-department - Which department (Finance, IT, HR, etc.)
-job_title - Role
-privilege_level - user, power-user, admin
-systems_access - Pipe-separated list of allowed systems
-privileged_roles - Admin-level roles if any
-last_login - When they last accessed anything
-days_inactive - How many days since last login
-is_active - Currently active employee?
-hired_date - When they joined
-role_change_date - When their role changed (if applicable)
-Anomalies to Look For:
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    DATA PIPELINE                             │
+│                                                             │
+│  sample_data/          generate_data.py                     │
+│  ├── identity_users.csv  ──►  users_labels.csv              │
+│  └── identity_events.csv ──►  events_labels.csv             │
+│                                                             │
+│                    DETECTION ENGINE                          │
+│                                                             │
+│  detector.py                                                │
+│  ├── IsolationForest (users,  contamination=0.30)           │
+│  ├── IsolationForest (events, contamination=0.41)           │
+│  ├── Rule-based score boosts (stale admin, orphaned accts)  │
+│  └── ──► flagged_users.csv + flagged_events.csv             │
+│                                                             │
+│                    LLM EXPLAINER                             │
+│                                                             │
+│  explainer.py                                               │
+│  ├── Grok API (grok-3 via xAI)                              │
+│  ├── Top 20 users + Top 20 events                           │
+│  └── ──► explanations.json                                  │
+│                                                             │
+│                    SOC DASHBOARD                             │
+│                                                             │
+│  app.py (Flask)                                             │
+│  ├── GET /            — Command Center                       │
+│  ├── GET /users       — User Risk Table (filterable)         │
+│  ├── GET /events      — Event Log (filterable)               │
+│  ├── GET /user/<id>   — User Deep Dive + Blast Radius        │
+│  ├── GET /simulate/<id> — Breach Simulation                  │
+│  └── GET /api/live-feed — JSON (auto-refresh)               │
+│                                                             │
+│                    EVALUATION                                │
+│                                                             │
+│  evaluate.py ──► audit_report.md                            │
+└─────────────────────────────────────────────────────────────┘
+```
 
-USR-0004 (sarah.brown): Stale account (45 days inactive) but still has HR_Admin privileges
-USR-0017 (andrew.clark): Contractor with 147 days inactive - should be revoked
-USR-0009 (james.martinez): Inactive user (59 days)
-2. identity_events.csv (300+ access events)
-Comprehensive access logs showing user activities across systems with 35% anomaly density.
-
-Columns:
-
-timestamp - When the activity happened
-user_id - Who did it
-username - Name
-action - What they did (login, sql_query, admin_operation, etc.)
-resource - What they accessed
-resource_sensitivity - Classification (low, medium, high)
-status - success or failure
-source_ip - Where they accessed from
-time_classification - business_hours, unusual_hours, night, week end
-anomaly_marker - Label indicating what's suspicious (for evaluation)
-Anomalies Embedded:
-
-STALE_ACCOUNT_LOGIN: USR-0004 accessing HRIS despite being inactive 45 days
-AFTER_HOURS_ADMIN_LOGIN: USR-0005 (admin) logging in at 22:47
-OFF_HOURS_DB_ACCESS: USR-0008 accessing sensitive Customer_PII at 00:22
-PRIVILEGE_CHANGE_OFF_HOURS: Admin modifying IAM policies at night
-CROSS_DEPARTMENT_ACCESS: USR-0003 (Finance Analyst) accessing GL_System (unusual)
-How to Use These Datasets
-Load in Python:
-import pandas as pd
-
-# Load users
-users = pd.read_csv('identity_users.csv')
-print(f"Total users: {len(users)}")
-print(f"Active users: {users[users['is_active']==True].shape[0]}")
-
-# Load events
-events = pd.read_csv('identity_events.csv')
-print(f"Total events: {len(events)}")
-print(f"Date range: {events['timestamp'].min()} to {events['timestamp'].max()}")
-
-# Merge for enriched view
-events['user_detail'] = events['user_id'].map(users.set_index('user_id')['department'])
-Analysis Ideas:
-Stale Account Detection: Who hasn't logged in for 30+ days but still has privileges?
-After-Hours Activity: Who's accessing high-risk systems outside 9-5?
-Cross-Dept Access: Who accesses systems outside their department?
-Privilege vs Activity: Do admin accounts match their roles?
-Anomaly Scoring: Combine multiple signals into a risk score
-Data Characteristics
-Records: 20 users, 50 events (sample size for demo)
-Time Range: April 15-17, 2026 (3 days)
-Anomaly Ratio: ~20% of events contain marked anomalies
-Systems: 10+ different systems (ERP, SIEM, Databases, cloud platforms)
-Privileges: Mix of user, power-user, and admin accounts
-Real-World Scale
-For production:
-
-Expected Users: 2,000-10,000
-Expected Events: 500,000+ over 90 days
-This sample is 1% of realistic data volume
-Ground Truth
-Anomalies are marked in anomaly_marker column. Use these to:
-
-Validate your detection models
-Calculate precision/recall metrics
-Understand what constitutes "suspicious"
-Next Steps
-Explore the data - Understand distributions, patterns
-Identify more anomalies - Beyond the marked ones
-Build detection model - Test anomaly detection algorithms
-Create dashboard - Visualize findings
-Document approach - Explain your methodology
+## SCreenshots 
 
 
+
+## Quick Start
+
+without GROG api key
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Generate ground-truth labels (run from identity_threat/ folder)
+python generate_data.py
+
+# 3. Run anomaly detection
+python detector.py
+
+# 4. (Optional) Generate LLM explanations — requires XAI_API_KEY
+set XAI_API_KEY=your_key_here
+python explainer.py
+
+# 5. Launch dashboard
+python app.py
+# → Open http://localhost:5000
+
+# 6. Evaluate results
+python evaluate.py
+```
+
+
+## Key Results
+
+| Metric    | Users | Events |
+|-----------|-------|--------|
+| Precision | TBD   | TBD    |
+| Recall    | TBD   | TBD    |
+| F1-Score  | TBD   | TBD    |
+
+> Run `python evaluate.py` to fill in actual values.
+
+## Detection Features
+
+### User Features
+- `days_inactive` — days since last login
+- `privilege_encoded` — user/power-user/admin/superadmin ordinal
+- `num_systems` — number of systems with access
+- `is_contractor` / `is_new_hire` — contextual exceptions
+- `has_admin_inactive` — admin account inactive >60 days ⚠
+- `is_orphaned` — disabled account still with system access ⚠
+- `is_overprivileged` — low role but high-value system access ⚠
+
+### Event Features
+- `hour_of_day`, `is_weekend`, `is_after_hours` — temporal signals
+- `rowcount`, `is_bulk` (>10,000 rows) — volume signals
+- `sensitivity_encoded` — low/medium/high resource sensitivity
+- `is_external_dest` — data leaving to external destination
+- `is_cross_dept` — access outside user's department
+- `is_restricted_to_external` — high-sensitivity + external = CRITICAL
+- `rowcount_zscore` — per-user statistical anomaly
+
+## Compliance Frameworks
+
+| Framework       | Requirement                              | Coverage                    |
+|-----------------|------------------------------------------|-----------------------------|
+| **NIST AC-2**   | Account Management                       | Stale & orphaned accounts   |
+| **GDPR Art.32** | Technical security measures              | Data export monitoring      |
+| **SOX 302**     | Internal controls over financial data    | Cross-dept GL/Finance access |
+
+## Exception Handling
+The system recognizes and suppresses false positives for:
+- **CTO/CISO** — broad access by design (Executive + admin combination)
+- **New hires** (<30 days) — unusual access patterns expected
+- **Contractors** — short tenure is expected behavior
+- **On-call IT** — after-hours access is legitimate
+
+## Production Scale Strategy
+
+```
+Raw Events (millions/day)
+         │
+         ▼
+    Apache Kafka
+    (real-time stream)
+         │
+         ▼
+    Spark Streaming
+    (feature extraction + scoring)
+         │
+         ▼
+    Redis (risk score cache, TTL=5min)
+         │
+         ▼
+    Dashboard API (Flask / FastAPI)
+         │
+         ▼
+    SIEM Integration (Splunk / Sentinel)
+```
+
+**Estimated throughput:** 100k users, 10M events/day at <200ms latency per score.
+
+## File Structure
+
+```
+identity_threat/
+├── generate_data.py     # Label generation from raw CSVs
+├── detector.py          # IsolationForest anomaly detection
+├── explainer.py         # Grok LLM risk assessments
+├── app.py               # Flask SOC dashboard
+├── evaluate.py          # Precision/recall evaluation
+├── requirements.txt
+└── README.md
+
+sample_data/
+├── identity_users.csv           # 300 user accounts
+├── identity_events.csv          # 901 access events
+├── identity_users_labels.csv    # Ground truth (generated)
+├── identity_events_labels.csv   # Ground truth (generated)
+├── flagged_users.csv            # Detector output
+├── flagged_events.csv           # Detector output
+└── explanations.json            # Grok LLM output
+```
