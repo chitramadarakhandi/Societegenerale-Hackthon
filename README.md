@@ -53,17 +53,21 @@ THREAT INTELLIGENCE PLATFORM
 
 ## Sreenshots 
 
-Command Control
+## Command Control
 ![image alt](Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/command_center.png)
 
-users
+
+## users
 ![image alt](Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/users.png)
 
-Events
+
+## Events
 ![image alt](PProblem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/events.png)
 
-Network
+
+## Network
 ![image alt](Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/Network.png)
+
 
 Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/command_center.png
 
