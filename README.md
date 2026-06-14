@@ -52,6 +52,7 @@ THREAT INTELLIGENCE PLATFORM
 ```
 
 ## Sreenshots 
+![image alt](Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/command_center.png)
 
 Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/command_center.png
 
