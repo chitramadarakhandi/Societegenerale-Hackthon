@@ -51,7 +51,9 @@ THREAT INTELLIGENCE PLATFORM
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## SCreenshots 
+## Sreenshots 
+
+Problem_01_Identity_Access/Problem_01_Identity_Access/Screenshots/command_center.png
 
 
 
